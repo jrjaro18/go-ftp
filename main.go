@@ -14,9 +14,7 @@ const (
 )
 
 // example of how to use the server and client
-
 func main() {
-
 	go func() {
 		err := server.Start( addr + "/Desktop", network_addr, port )
 		if(err != nil) {
@@ -28,5 +26,4 @@ func main() {
 	if(err != nil) {
 		fmt.Println(err)
 	}
-
 }
