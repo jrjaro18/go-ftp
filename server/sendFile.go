@@ -78,7 +78,7 @@ func handleRequest(conn net.Conn, folderPath string) error {
 			fileStat, err := os.Stat(string(folderPath) + "/" + input)
 			if err != nil {
 				fmt.Println("Error reading file")
-				fmt.Fprintln(conn, "404")
+				fmt.Fprintf(conn, "404")
 				return err
 			}
 			
