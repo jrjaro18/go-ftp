@@ -6,11 +6,25 @@ import (
 	"fmt"
 )
 
+const (
+	addr = "C:/Users/username"
+	fileName = "doremifasolatido.mp3"
+	network_addr = "localhost"
+	port = "20"
+)
+
 func main() {
-	go server.Start("C:/Users/", "localhost", "20")
-	err:= client.ReceiveFile("C:/Users/rohan/Desktop/Test Folder", "send.xlsx", "localhost", "20")
+	
+	go func() {
+		err := server.Start( addr + "/Desktop", network_addr, port )
+		if(err != nil) {
+			fmt.Println(err)
+		}
+	}()
+
+	err := client.ReceiveFile( addr + "/Downloads", fileName, network_addr, port )
 	if(err != nil) {
 		fmt.Println(err)
 	}
-	// client.ReceiveList("localhost", "20")
+
 }
