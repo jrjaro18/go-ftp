@@ -62,6 +62,6 @@ if err != nil {
 }
 ```
 ---
-###### This project is licensed under the MIT License - see the [License](LICENSE) file for details.
+###### This project is licensed under the MIT License - see the [License](LICENSE-MIT) file for details.
 
 ###### This README provides clear instructions on how to use both the server and client components of your Go FTP package. Adjust the paths and configuration parameters as needed for your specific setup.
