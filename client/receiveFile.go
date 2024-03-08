@@ -44,6 +44,9 @@ func ReceiveFile(path string, fileName string, ip string, port string) error {
 	conn.Write([]byte(fileName + "\n"))
 	var buf [128]byte
 	n, err := conn.Read(buf[:])
+	if (string(buf[:n]) == "404") {
+		return fmt.Errorf("file not found on server")
+	}
 	if err != nil {
 		fmt.Println("Error reading:", err.Error())
 		return err
