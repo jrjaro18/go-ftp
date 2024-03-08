@@ -56,7 +56,7 @@ if err != nil {
 ```
 #### To start the FTP client and receive the list of files available in server, use the following code snippet:
 ```go
-err := client.ReceiveList(networkAddr, port)
+arr, err := client.ReceiveList(networkAddr, port)
 if err != nil {
   fmt.Println(err)
 }
